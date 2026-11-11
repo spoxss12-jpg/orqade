@@ -20,11 +20,6 @@ const games = [
   provider: "Playgama",
   description: "Grow your snake, collect orbs, and dodge other snakes in a chaotic Italian brainrot meme arena. Mouse controls."
   },
-
-
-  
-
-
 {
   id: 2,
   title: "Deadly Descent",
@@ -272,23 +267,21 @@ const games = [
     provider: "Playgama",
     description: "Build defensive towers, command heroes and protect humanity in a post-apocalyptic world."
   },
-  
-  {
-    id: 8,
-    title: "MR RACER - Car Racing",
-    genre: "Racing",
-    category: "Driving",
-    icon: "🏎️",
-    color: "turbo",
-    rating: "Free",
-    players: "All Devices",
-    badge: "RACING",
-    image: "https://static.playgama.com/p-img/pg/backfill/game-90490/icon/1e73c6b9b06c3586f6c0199519bfdbf7c8a5b8c2da8fbb4a225a9d4d287f6cc2?width=448",
-    link:"https://playgama.com/EN/export/game/mr-racer-car-racing",
-    provider: "Playgama",
-    description: "Race supercars, dodge traffic, complete missions and customize your dream cars."
-  },
-
+ {
+  id: 8,
+  title: "MR RACER - Car Racing",
+  genre: "Racing",
+  category: "Driving",
+  icon: "🏎️",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "RACING",
+  image: "https://static.playgama.com/p-img/pg/backfill/game-90490/icon/1e73c6b9b06c3586f6c0199519bfdbf7c8a5b8c2da8fbb4a225a9d4d287f6cc2?width=448",
+  link: "https://playgama.com/export/game/mr-racer-car-racing?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
+  description: "Race supercars, dodge traffic, complete missions and customize your dream cars."
+},
   
   {
     id: 9,
@@ -405,21 +398,21 @@ const games = [
     description: "Build your own rollercoaster, unlock new tracks, ride your creations, and earn money to expand your amusement park."
   },
 
-  {
-    id: 16,
-    title: "The Tall Man",
-    genre: "Horror",
-    category: "Horror",
-    icon: "👻",
-    color: "turbo",
-    rating: "Free",
-    players: "All Devices",
-    badge: "Horror",
-    image: "https://static.playgama.com/p-img/pg/the-tall-man/icon/2273553b6282464ca5d9ed962482fa96?width=448",
-    link: "https://playgama.com/export/game/the-tall-man?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
-    provider: "Playgama",
-    description: "Explore a dark forest, collect nine mysterious pages, and survive the terrifying creature stalking you. Manage your flashlight and stay alert."
-  },
+ {
+  id: 8,
+  title: "MR RACER - Car Racing",
+  genre: "Racing",
+  category: "Driving",
+  icon: "🏎️",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "RACING",
+  image: "https://static.playgama.com/p-img/pg/backfill/game-90490/icon/1e73c6b9b06c3586f6c0199519bfdbf7c8a5b8c2da8fbb4a225a9d4d287f6cc2?width=448",
+  link: "https://playgama.com/export/game/mr-racer-car-racing?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
+  description: "Race supercars, dodge traffic, complete missions and customize your dream cars."
+},
   {
     id: 17,
     title: "Sky Wars: Battle of the Islands",
