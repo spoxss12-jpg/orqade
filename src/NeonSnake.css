@@ -1,0 +1,212 @@
+
+.snake-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: rgba(5, 5, 12, 0.97);
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+}
+
+.snake-panel {
+  width: 100%;
+  max-width: 650px;
+  padding: 26px;
+  border: 1px solid #30264b;
+  border-radius: 24px;
+  background: #11111c;
+  box-shadow: 0 20px 100px rgba(139, 92, 246, 0.15);
+}
+
+.snake-top,
+.snake-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.snake-label,
+.snake-controls p {
+  color: #a78bfa;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.snake-top h1 {
+  margin: 7px 0 20px;
+  font-size: clamp(24px, 5vw, 38px);
+  letter-spacing: -1.5px;
+}
+
+.snake-top h1 span {
+  color: #a78bfa;
+}
+
+.snake-close,
+.snake-pad button,
+.snake-bottom button {
+  color: white;
+  background: #242235;
+  border: 1px solid #403858;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.snake-close {
+  padding: 10px 14px;
+  align-self: flex-start;
+}
+
+.snake-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.snake-stats div {
+  padding: 13px;
+  background: #1b1a29;
+  border-radius: 12px;
+}
+
+.snake-stats span,
+.snake-stats strong {
+  display: block;
+}
+
+.snake-stats span {
+  color: #9290a4;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.snake-stats strong {
+  margin-top: 5px;
+  font-size: 22px;
+}
+
+.snake-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #393052;
+  border-radius: 14px;
+  background: #090a13;
+}
+
+.snake-cell {
+  border: 1px solid rgba(255,255,255,0.025);
+}
+
+.snake-body {
+  background: #8b5cf6;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(139,92,246,0.5);
+}
+
+.snake-head {
+  background: #c4b5fd;
+  border-radius: 6px;
+}
+
+.snake-food {
+  background: #00e5a0;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #00e5a0;
+}
+
+.snake-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  background: rgba(9,9,16,0.83);
+  backdrop-filter: blur(5px);
+}
+
+.snake-message h2 {
+  font-size: clamp(22px, 5vw, 34px);
+}
+
+.snake-message p {
+  color: #b5b1c7;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.snake-message button {
+  margin-top: 14px;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  background: #8b5cf6;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.snake-controls {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.snake-pad {
+  display: grid;
+  justify-content: center;
+  gap: 8px;
+}
+
+.snake-pad > button {
+  width: 48px;
+  height: 40px;
+}
+
+.snake-pad div {
+  display: flex;
+  gap: 8px;
+}
+
+.snake-pad div button {
+  width: 48px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.snake-bottom {
+  padding-top: 16px;
+  border-top: 1px solid #302b40;
+  color: #9894aa;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.snake-bottom button {
+  padding: 10px 14px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+@media (max-width: 480px) {
+  .snake-panel {
+    padding: 15px;
+  }
+
+  .snake-overlay {
+    padding: 10px;
+  }
+}

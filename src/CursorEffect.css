@@ -1,0 +1,68 @@
+
+.cursor-effect {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.cursor-effect.visible {
+  opacity: 1;
+}
+
+.cursor-glow {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 245, 160, 0.2),
+    rgba(91, 33, 182, 0.12) 45%,
+    transparent 72%
+  );
+  border: 1px solid rgba(0, 245, 160, 0.45);
+  box-shadow:
+    0 0 15px rgba(0, 245, 160, 0.2),
+    inset 0 0 12px rgba(0, 245, 160, 0.12);
+  transition:
+    width 0.3s cubic-bezier(.2,.8,.2,1),
+    height 0.3s cubic-bezier(.2,.8,.2,1),
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00f5a0;
+  box-shadow: 0 0 12px #00f5a0;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-effect.active .cursor-glow {
+  width: 68px;
+  height: 68px;
+  border-color: rgba(0, 245, 160, 0.85);
+  background: radial-gradient(
+    circle,
+    rgba(0, 245, 160, 0.24),
+    rgba(91, 33, 182, 0.16) 55%,
+    transparent 75%
+  );
+}
+
+.cursor-effect.active .cursor-dot {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-effect {
+    display: none;
+  }
+}

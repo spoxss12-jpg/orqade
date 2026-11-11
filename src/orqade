@@ -1,0 +1,481 @@
+
+import { useMemo, useState } from "react";
+import "./App.css";
+
+const games = [
+  { id: 1, title: "Neon Drift", genre: "Racing", icon: "🏎️", color: "neon", rating: "4.9", players: "12.4K", badge: "TRENDING" },
+  { id: 2, title: "Shadow Realm", genre: "Adventure", icon: "⚔️", color: "shadow", rating: "4.8", players: "8.2K", badge: "POPULAR" },
+  { id: 3, title: "Cyber Arena", genre: "Action", icon: "🤖", color: "cyber", rating: "4.7", players: "6.8K", badge: "HOT" },
+  { id: 4, title: "Block Escape", genre: "Puzzle", icon: "🧊", color: "block", rating: "4.6", players: "5.1K", badge: "" },
+  { id: 5, title: "Dragon Valley", genre: "Adventure", icon: "🐉", color: "dragon", rating: "4.9", players: "9.3K", badge: "NEW" },
+  { id: 6, title: "Turbo Rush", genre: "Racing", icon: "🏁", color: "turbo", rating: "4.8", players: "7.7K", badge: "" },
+  { id: 7, title: "Pixel Raiders", genre: "Action", icon: "👾", color: "pixel", rating: "4.5", players: "3.9K", badge: "" },
+  { id: 8, title: "Mind Games", genre: "Puzzle", icon: "🧠", color: "mind", rating: "4.7", players: "4.2K", badge: "" },
+  { id: 9, title: "Skybound", genre: "Adventure", icon: "🚀", color: "sky", rating: "4.8", players: "6.1K", badge: "NEW" },
+  { id: 10, title: "Street Legends", genre: "Racing", icon: "🚘", color: "street", rating: "4.6", players: "3.4K", badge: "" },
+  { id: 11, title: "Dungeon Run", genre: "Action", icon: "🛡️", color: "dungeon", rating: "4.7", players: "5.8K", badge: "" },
+  { id: 12, title: "Color Quest", genre: "Puzzle", icon: "🎨", color: "color", rating: "4.5", players: "2.8K", badge: "" },
+];
+
+const categories = [
+  { name: "All Games", icon: "✦" },
+  { name: "Action", icon: "⚡" },
+  { name: "Adventure", icon: "🧭" },
+  { name: "Racing", icon: "🏁" },
+  { name: "Puzzle", icon: "🧩" },
+];
+
+function Logo() {
+  return (
+    <a href="#home" className="brand" aria-label="ORQADE home">
+      <span className="brand-symbol">O</span>
+      <span>ORQ<span className="brand-accent">A</span>DE</span>
+      <span className="brand-period">.</span>
+    </a>
+  );
+}
+
+function App() {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All Games");
+  const [activeNav, setActiveNav] = useState("Discover");
+  const [mobileMenu, setMobileMenu] = useState(false);
+const [activeGame, setActiveGame] = useState(false);
+const [targetColor, setTargetColor] = useState("PURPLE");
+const [score, setScore] = useState(0);
+const [feedback, setFeedback] = useState("Find the matching colour!");
+const [round, setRound] = useState(1);
+
+const colorOptions = [
+  { name: "PURPLE", value: "#9333EA" },
+  { name: "GREEN", value: "#00D68F" },
+  { name: "BLUE", value: "#3B82F6" },
+  { name: "ORANGE", value: "#F97316" },
+];
+
+const playColor = (color) => {
+  if (color === targetColor) {
+    setScore((previous) => previous + 10);
+    setFeedback("Correct! +10 points 🎉");
+  } else {
+    setFeedback("Not quite! Try again.");
+    return;
+  }
+
+  const nextColor = colorOptions[
+    Math.floor(Math.random() * colorOptions.length)
+  ].name;
+
+  setTargetColor(nextColor);
+  setRound((previous) => previous + 1);
+};
+  const filteredGames = useMemo(() => {
+    return games.filter((game) => {
+      const matchesCategory =
+        category === "All Games" || game.genre === category;
+      const matchesSearch =
+        `${game.title} ${game.genre}`.toLowerCase().includes(search.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [category, search]);
+
+  const scrollToGames = () => {
+    document.getElementById("games")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="site-shell" id="home">
+      <header className="topbar">
+        <div className="topbar-inner">
+          <Logo />
+
+          <button
+            className="mobile-menu-button"
+            onClick={() => setMobileMenu(!mobileMenu)}
+            aria-label="Toggle navigation"
+          >
+            {mobileMenu ? "✕" : "☰"}
+          </button>
+
+          <nav className={`main-nav ${mobileMenu ? "nav-open" : ""}`}>
+            {["Discover", "Browser Games", "Mobile & PC"].map((item) => (
+              <a
+                key={item}
+                href={item === "Mobile & PC" ? "#discover" : "#games"}
+                className={activeNav === item ? "nav-link selected" : "nav-link"}
+                onClick={() => {
+                  setActiveNav(item);
+                  setMobileMenu(false);
+                }}
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+
+          <div className="topbar-actions">
+            <span className="live-indicator"><i /> LIVE</span>
+            <a href="#games" className="topbar-button">Explore games <span>↗</span></a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section className="hero-section">
+          <div className="hero-background-grid" />
+          <div className="hero-container">
+            <div className="hero-copy">
+              <div className="hero-kicker">
+                <span className="kicker-line" />
+                THE PLAYGROUND FOR EVERYONE
+              </div>
+
+              <h1>
+                YOUR WORLD.
+                <br />
+                YOUR <span>GAME.</span>
+              </h1>
+
+              <p className="hero-description">
+                Discover your next obsession. Play exciting browser games
+                instantly, explore new worlds and find something worth playing.
+              </p>
+
+              <div className="hero-actions">
+                <button className="button-primary" onClick={scrollToGames}>
+                  Explore games <span>↗</span>
+                </button>
+                <a href="#discover" className="button-quiet">
+                  Discover more <span>→</span>
+                </a>
+              </div>
+
+              <div className="hero-stats">
+                <div><strong>INSTANT</strong><span>Browser play</span></div>
+                <div><strong>100s</strong><span>Worlds to explore</span></div>
+                <div><strong>FREE</strong><span>To get started</span></div>
+              </div>
+            </div>
+
+            <div className="hero-visual" aria-label="Featured fantasy game artwork">
+              <div className="visual-ring ring-one" />
+              <div className="visual-ring ring-two" />
+              <div className="visual-glow" />
+              <div className="visual-orb">🎮</div>
+              <div className="visual-label label-top">
+                <span className="label-dot" /> PLAY YOUR WAY
+              </div>
+              <div className="visual-label label-bottom">
+                <span>✦</span> NEXT LEVEL FUN
+              </div>
+              <div className="visual-chip chip-left">⚡ ACTION</div>
+              <div className="visual-chip chip-right">🏆 ARCADE</div>
+            </div>
+          </div>
+
+          <div className="hero-marquee">
+            <span>DISCOVER</span><b>✳</b>
+            <span>PLAY</span><b>✳</b>
+            <span>REPEAT</span><b>✳</b>
+            <span>DISCOVER</span><b>✳</b>
+            <span>PLAY</span><b>✳</b>
+            <span>REPEAT</span>
+          </div>
+        </section>
+
+        <section className="library-section" id="games">
+          <div className="section-topline">
+            <div>
+              <div className="section-eyebrow">THE ORQADE LIBRARY / 001</div>
+              <h2>Find your next <span>favourite.</span></h2>
+              <p className="section-description">
+                A world of games is waiting. Pick a category and jump in.
+              </p>
+            </div>
+            <div className="library-count">
+              <strong>{filteredGames.length.toString().padStart(2, "0")}</strong>
+              <span>GAMES SHOWN</span>
+            </div>
+          </div>
+
+          <div className="library-toolbar">
+            <div className="category-tabs">
+              {categories.map((item) => (
+                <button
+                  key={item.name}
+                  className={category === item.name ? "category-tab active" : "category-tab"}
+                  onClick={() => setCategory(item.name)}
+                >
+                  <span>{item.icon}</span> {item.name}
+                </button>
+              ))}
+            </div>
+
+            <label className="search-box">
+              <span>⌕</span>
+              <input
+                type="search"
+                placeholder="Search your next game..."
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+              />
+              <kbd>⌘ K</kbd>
+            </label>
+          </div>
+
+          <div className="games-grid">
+            {filteredGames.map((game, index) => (
+              <article className="game-card" key={game.id}>
+                <button
+                  className={`game-cover cover-${game.color}`}
+                  onClick={() => {
+  if (game.id === 12) {
+    setActiveGame(true);
+    setScore(0);
+    setRound(1);
+    setTargetColor("PURPLE");
+    setFeedback("Find the matching colour!");
+  } else {
+    alert("This game is coming soon!");
+  }
+}}
+                >
+                  {game.badge && <span className="game-badge">{game.badge}</span>}
+                  <span className="cover-number">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="cover-art">{game.icon}</span>
+                  <span className="cover-play">▶</span>
+                  <span className="cover-shine" />
+                </button>
+
+                <div className="game-card-details">
+                  <div className="game-title-row">
+                    <div>
+                      <h3>{game.title}</h3>
+                      <span className="game-genre">{game.genre}</span>
+                    </div>
+                    <span className="game-rating">★ {game.rating}</span>
+                  </div>
+                  <div className="game-card-meta">
+                    <span><i /> {game.players} players</span>
+                    <span className="game-card-arrow">↗</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {filteredGames.length === 0 && (
+            <div className="no-results">
+              <span>⌕</span>
+              <h3>No games found</h3>
+              <p>Try a different title or choose another category.</p>
+              <button onClick={() => { setSearch(""); setCategory("All Games"); }}>
+                Clear filters
+              </button>
+            </div>
+          )}
+
+          <div className="library-bottom">
+            <span>SHOWING {filteredGames.length} OF {games.length} DEMO TITLES</span>
+            <span>MORE WORLDS ARE COMING <b>✳</b></span>
+          </div>
+        </section>
+
+        <section className="discover-section" id="discover">
+          <div className="discover-decoration">✳</div>
+          <div className="discover-content">
+            <div className="section-eyebrow">THE NEXT LEVEL / 002</div>
+            <h2>Not just games.<br /><span>New worlds.</span></h2>
+            <p>
+              Explore the wider gaming universe. Discover mobile and PC titles,
+              find trailers, learn about new releases and follow official game links.
+            </p>
+            <a href="#footer" className="button-primary">
+              Explore the universe <span>↗</span>
+            </a>
+          </div>
+          <div className="discover-panels">
+            <a href="#footer" className="discover-panel panel-mobile">
+              <span className="panel-icon">📱</span>
+              <span className="panel-label">01 / MOBILE</span>
+              <strong>Games on the go.</strong>
+              <span className="panel-arrow">↗</span>
+            </a>
+            <a href="#footer" className="discover-panel panel-pc">
+              <span className="panel-icon">🖥️</span>
+              <span className="panel-label">02 / PC</span>
+              <strong>Find your next world.</strong>
+              <span className="panel-arrow">↗</span>
+            </a>
+          </div>
+        </section>
+
+        <section className="newsletter-section">
+          <div>
+            <div className="section-eyebrow">STAY IN THE LOOP</div>
+            <h2>Good games. <span>Good times.</span></h2>
+            <p>More discoveries and new gaming experiences are on the way.</p>
+          </div>
+          <a href="#games" className="newsletter-link">Find a game <span>↗</span></a>
+        </section>
+      </main>
+
+      <footer className="site-footer" id="footer">
+        <div className="footer-main">
+          <div className="footer-brand-column">
+            <Logo />
+            <p className="footer-about">
+              A playground for curious players. Discover games, explore new
+              worlds and find your next favourite experience.
+            </p>
+            <div className="footer-socials">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">yt</a>
+              <a href="https://discord.com" target="_blank" rel="noreferrer" aria-label="Discord">dc</a>
+            </div>
+          </div>
+
+          <div className="footer-column">
+            <h4>EXPLORE</h4>
+            <a href="#games">All games</a>
+            <a href="#games">Popular games</a>
+            <a href="#games">New games</a>
+            <a href="#discover">Mobile games</a>
+            <a href="#discover">PC games</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>CATEGORIES</h4>
+            <a href="#games">Action</a>
+            <a href="#games">Adventure</a>
+            <a href="#games">Racing</a>
+            <a href="#games">Puzzle</a>
+            <a href="#games">Arcade</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>ORQADE</h4>
+            <a href="#home">About us</a>
+            <a href="#footer">Contact</a>
+            <a href="#footer">Submit a game</a>
+            <a href="#footer">Advertise</a>
+            <a href="#footer">Partnerships</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>LEGAL</h4>
+            <a href="#footer">Privacy policy</a>
+            <a href="#footer">Terms of use</a>
+            <a href="#footer">Cookie policy</a>
+            <a href="#footer">Copyright</a>
+          </div>
+        </div>
+
+    <div className="footer-bottom">
+  <span>© 2026 ORQADE. ALL RIGHTS RESERVED.</span>
+  <span>BUILT FOR THE LOVE OF PLAY <b>✳</b></span>
+  <a href="#home">BACK TO TOP ↑</a>
+</div>
+</footer>
+
+      {activeGame && (
+        <div style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 9999,
+          background: "#090910",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "20px",
+        }}>
+          <div style={{
+            width: "100%",
+            maxWidth: "650px",
+            background: "#171724",
+            border: "1px solid #343044",
+            borderRadius: "20px",
+            padding: "30px",
+            textAlign: "center",
+          }}>
+            <button
+              onClick={() => setActiveGame(false)}
+              style={{
+                float: "right",
+                background: "#292638",
+                color: "white",
+                border: 0,
+                padding: "10px 15px",
+                borderRadius: "8px",
+                cursor: "pointer",
+              }}
+            >
+              ✕ Close
+            </button>
+
+            <h1 style={{ color: "white", marginTop: "35px" }}>
+              COLOR QUEST
+            </h1>
+
+            <p style={{ color: "#aaa" }}>
+              Round {round} · Score: {score}
+            </p>
+
+            <h2 style={{ color: "#A78BFA", marginTop: "35px" }}>
+              Find: {targetColor}
+            </h2>
+
+            <p style={{ color: "#ccc" }}>{feedback}</p>
+
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "15px",
+              maxWidth: "350px",
+              margin: "30px auto",
+            }}>
+              {colorOptions.map((color) => (
+                <button
+                  key={color.name}
+                  onClick={() => playColor(color.name)}
+                  aria-label={`Choose ${color.name}`}
+                  style={{
+                    height: "110px",
+                    background: color.value,
+                    border: "3px solid rgba(255,255,255,0.15)",
+                    borderRadius: "16px",
+                    cursor: "pointer",
+                    transition: "transform 0.15s",
+                  }}
+                />
+              ))}
+            </div>
+
+            <p style={{ color: "#888", fontSize: "13px" }}>
+              Match the target colour to earn 10 points.
+            </p>
+
+            <button
+              onClick={() => {
+                setScore(0);
+                setRound(1);
+                setTargetColor("PURPLE");
+                setFeedback("New game started!");
+              }}
+              style={{
+                background: "#8B5CF6",
+                color: "white",
+                border: 0,
+                borderRadius: "10px",
+                padding: "12px 22px",
+                cursor: "pointer",
+              }}
+            >
+              Restart Game
+            </button>
+          </div>
+        </div>
+      )}
+        </div>
+  );
+}

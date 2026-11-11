@@ -1,0 +1,45 @@
+
+
+.cursor-effect {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor-effect.visible {
+  opacity: 1;
+}
+
+.cursor-glow {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.4),
+    rgba(0, 229, 160, 0.12),
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  transition: left 0.1s ease-out, top 0.1s ease-out;
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #00e5a0;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #00e5a0;
+  transform: translate(-50%, -50%);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-effect {
+    display: none;
+  }
+}
