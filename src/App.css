@@ -1379,3 +1379,86 @@ button { cursor: pointer; }
     line-height: 1;
   }
 }
+
+/* ORQADE MOBILE HEADER TEXT FIX */
+@media (max-width: 600px) {
+  .topbar {
+    height: 66px;
+  }
+
+  .topbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 15px !important;
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 20px !important;
+    line-height: 1 !important;
+    letter-spacing: -1px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .brand-symbol {
+    width: 27px;
+    height: 27px;
+    font-size: 17px;
+    margin-right: 7px;
+  }
+
+  .mobile-menu-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    margin-left: auto;
+    font-size: 23px;
+    line-height: 1;
+    color: white;
+    background: #171725;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+  }
+
+  .main-nav {
+    display: none !important;
+  }
+
+  .main-nav.nav-open {
+    display: flex !important;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 16px;
+    background: #11111b;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    z-index: 100;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 15px 5px;
+    font-size: 14px !important;
+    line-height: 1.4;
+    white-space: normal;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+
+  .nav-link.selected::after {
+    display: none;
+  }
+
+  .topbar-actions {
+    display: none !important;
+  }
+}
