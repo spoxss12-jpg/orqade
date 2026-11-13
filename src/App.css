@@ -1315,3 +1315,67 @@ button { cursor: pointer; }
     transform: none;
   }
 }
+/* ORQADE MOBILE GAME GRID FIX */
+@media screen and (max-width: 600px) {
+  .games-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    width: 100% !important;
+    gap: 22px !important;
+  }
+
+  .game-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .game-cover {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
+/* ORQADE MOBILE HEADER ALIGNMENT FIX */
+@media screen and (max-width: 600px) {
+  .topbar-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 64px;
+    padding: 0 16px !important;
+    gap: 12px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .brand-symbol {
+    flex-shrink: 0;
+  }
+
+  .main-nav {
+    text-align: left;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .mobile-menu-button {
+    flex-shrink: 0;
+    margin-left: auto;
+    line-height: 1;
+  }
+}

@@ -4,7 +4,24 @@ import NeonSnake from "./NeonSnake";
 import JungleRunner from "./JungleRunner";
 import { useMemo, useState, useEffect } from "react";
 const games = [
-   {
+{
+  id: "stickman-street-fighting",
+  title: "Stickman Street Fighting",
+  genre: "Action",
+  category: "Fighting",
+  icon: "🥊",
+  color: "turbo",
+  rating: "Free",
+  players: "1 Player",
+  badge: "ACTION",
+  image: "https://img.gamepix.com/games/stickman-street-fighting/icon/stickman-street-fighting.png?w=448",
+  imageFit: "fill",
+  link: "https://play.gamepix.com/stickman-street-fighting/embed?sid=54ODQ",
+  provider: "GamePix",
+  description: "Fight your way through intense street battles in this action-packed stickman fighting game."
+},
+  
+  {
   id: 1,
   title: "Snake Slither.io Italian Brainrot",
   genre: "Snake",
@@ -14,8 +31,8 @@ const games = [
   rating: "Free",
   players: "1 Player",
   badge: "Meme",
-  image: "https://static.playgama.com/p-img/pg/backfill/game-116706/icon/cf1fc230fcfad36163797b69beece4008208ac530d4d7dccd6f9600b24e5a4e4?width=448",
-  link: "https://playgama.com/export/game/snake-slitherio-italian-brainrot?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  link:"https://playgama.com/export/game/snake-slitherio-italian-brainrot?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  image:"https://static.playgama.com/p-img/pg/backfill/game-116706/icon/cf1fc230fcfad36163797b69beece4008208ac530d4d7dccd6f9600b24e5a4e4?width=448",
   provider: "Playgama",
   description: "Grow your snake, collect orbs, and dodge other snakes in a chaotic Italian brainrot meme arena. Mouse controls."
   },
@@ -46,7 +63,7 @@ const games = [
   rating: "Free",
   players: "1 Player",
   badge: "Sandbox",
-image: "https://static.playgama.com/p-img/pg/backfill/game-111288/icon/543f48015b7f6c002a2a34136e6346e358457e4ffd762c7e7fd0752c7006ff7f?width=448",
+  image: "https://static.playgama.com/p-img/pg/backfill/game-111288/icon/543f48015b7f6c002a2a34136e6346e358457e4ffd762c7e7fd0752c7006ff7f?width=448",
   link: "https://playgama.com/export/game/buggy-simulator-sandbox-3d?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Explore an open driving sandbox with realistic buggy physics. Drive across different maps, test suspension, perform jumps and stunts, explore bridges, and experiment with vehicle handling."
