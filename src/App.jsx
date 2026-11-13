@@ -4,8 +4,7 @@ import NeonSnake from "./NeonSnake";
 import JungleRunner from "./JungleRunner";
 import { useMemo, useState, useEffect } from "react";
 const games = [
-  
-  {
+   {
   id: 1,
   title: "Snake Slither.io Italian Brainrot",
   genre: "Snake",
@@ -294,7 +293,7 @@ const games = [
     players: "All Devices",
     badge: "ZOMBIE",
     image: "https://static.playgama.com/p-img/pg/icon/d4a9d5c216a44972adaa22e4de0b67ac?width=448",
-    link: "https://playgama.com/export/game/milord-we-have-a-zombie-problem",
+    link: "https://playgama.com/export/game/milord-we-have-a-zombie-problem?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
     provider: "Playgama",
     description: "Build powerful medieval towers, command heroes and defend your castle against massive zombie hordes."
   },
@@ -815,7 +814,7 @@ const games = [
   players: "1 Player",
   badge: "Strategy",
   image: "https://static.playgama.com/p-img/pg/grow-empire/big-preview/87ac17d7036d48a3bcc663ccce1b34d0?width=448",
-  link: "https://playgama.com/export/game/grow-empire",
+  link: "https://playgama.com/export/game/grow-empire?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Build and defend your empire with towers, warriors and heroes."
 },
@@ -832,7 +831,7 @@ const games = [
   players: "1 Player",
   badge: "Brain Game",
   image: "https://static.playgama.com/p-img/pg/draw-bridge--brain-game/big-preview/1e2c80ac6f08468a986810cf0aa49403?width=448",
-  link: "https://playgama.com/export/game/draw-bridge--brain-game",
+  link: "https://playgama.com/export/game/draw-bridge--brain-game?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Draw bridges and guide vehicles safely through obstacles."
 },
@@ -847,7 +846,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/find-the-vampire/big_preview/e648c547d27347b7bf8126027148cc25?width=448",
-  link: "https://playgama.com/export/game/find-the-vampire",
+  link: "https://playgama.com/export/game/find-the-vampire?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Find disguised vampires and rescue citizens."
 },
@@ -863,7 +862,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/coin-run/big_preview/b7a75b0b831940dcaecc90c94cb43899?width=448",
-  link: "https://playgama.com/export/game/coin-run",
+  link: "https://playgama.com/export/game/coin-run?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Collect coins, avoid obstacles and build your business empire."
 },
@@ -878,7 +877,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/shape-transforming-shifting-run/big-preview/086d500d59e14cb9b717c43000d3ad36?width=448",
-  link: "https://playgama.com/export/game/shape-transforming-shifting-run",
+  link: "https://playgama.com/export/game/shape-transforming-shifting-run?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Transform into cars, planes and ships to overcome obstacles."
 },
@@ -893,7 +892,7 @@ const games = [
   players: "1 Player",
   badge: "Popular",
   image: "https://static.playgama.com/p-img/pg/find-match-3d/big-preview/b8951ea43f0c4e18af3401f015c1750c?width=448",
-  link: "https://playgama.com/export/game/find-match-3d",
+  link: "https://playgama.com/export/game/find-match-3d?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Find and match three identical objects before time runs out."
 },
@@ -909,7 +908,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/fashion-princess--dress-up-for-girls-e00c-1/big-preview/99f7b8102d88492ea7494050cdd6b7a9?width=448",
-  link: "https://playgama.com/export/game/fashion-princess--dress-up-for-girls-e00c-1",
+  link: "https://playgama.com/export/game/fashion-princess--dress-up-for-girls-e00c-1?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Create fashionable outfits, style princesses and compete in fashion battles."
 },
@@ -924,7 +923,7 @@ const games = [
   players: "1 Player",
   badge: "Action",
   image: "https://static.playgama.com/p-img/pg/ragdoll-gun-shooter-cannon-spinner-playground/big-preview/8b8e25a039b347529004799dfaffb24f?width=448",
-  link: "https://playgama.com/export/game/ragdoll-gun-shooter-cannon-spinner-playground",
+  link: "https://playgama.com/export/game/ragdoll-gun-shooter-cannon-spinner-playground?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Use powerful weapons and physics-based shots to defeat ragdoll enemies."
 },
@@ -939,7 +938,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/gym-boss/big_preview/1dee3f88c32e47aaa2635e091a92696c?width=448",
-  link: "https://playgama.com/export/game/gym-boss",
+  link: "https://playgama.com/export/game/gym-boss?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Train your character, build strength and become the ultimate gym champion."
 },
@@ -954,7 +953,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/preview/8d255e3d13454033ab09dd8229847053?width=448",
-  link: "https://playgama.com/export/game/bmg-ragdoll-car-race",
+  link: "https://playgama.com/export/game/bmg-ragdoll-car-race?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Race, crash vehicles and enjoy chaotic ragdoll driving physics."
 },
@@ -969,7 +968,7 @@ const games = [
   players: "1 Player",
   badge: "3D",
   image: "https://static.playgama.com/p-img/pg/crazy-flying-car/big_preview/f7ed5462da5e42a19e17ab99ff43369f?width=448",
-  link: "https://playgama.com/export/game/crazy-flying-car",
+  link: "https://playgama.com/export/game/crazy-flying-car?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Drive flying cars, race opponents and take shortcuts through the sky."
 },
@@ -984,7 +983,7 @@ const games = [
   players: "1 Player",
   badge: "Popular",
   image:"https://static.playgama.com/p-img/pg/crazy-flying-car/icon/47bc9b63a40d4c6280ed8cae393362c1?width=448",
-  link: "https://playgama.com/export/game/ragdoll-racing-extreme-downhill",
+  link: "https://playgama.com/export/game/ragdoll-racing-extreme-downhill?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Race downhill against opponents and survive hilarious ragdoll crashes."
 },
@@ -999,7 +998,7 @@ const games = [
   players: "1 Player",
   badge: "Brain Game",
   image: "https://static.playgama.com/p-img/pg/single-line-drawing-puzzle/big-preview/4becffa913504a729da6eef14f3a100d?width=448",
-  link: "https://playgama.com/export/game/single-line-drawing-puzzle",
+  link: "https://playgama.com/export/game/single-line-drawing-puzzle?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Complete challenging shapes by drawing one continuous line."
 },
@@ -1014,7 +1013,7 @@ const games = [
   players: "1 Player",
   badge: "Tycoon",
   image: "https://static.playgama.com/p-img/pg/animal-care-tycoon/big-preview/49c7d3c6f2ce4349858d15141f0c463f?width=448",
-  link: "https://playgama.com/export/game/animal-care-tycoon",
+  link: "https://playgama.com/export/game/animal-care-tycoon?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Build an animal hospital, care for pets and grow your veterinary business."
 },
@@ -1029,7 +1028,7 @@ const games = [
   players: "1 Player",
   badge: "Strategy",
   image: "https://static.playgama.com/p-img/pg/craft-and-battle/big_preview/b152e7d24d064364816e5464f0188784?width=448",
-  link: "https://playgama.com/export/game/craft-and-battle",
+  link: "https://playgama.com/export/game/craft-and-battle?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Gather resources, build your army and defeat enemy bases."
 },
@@ -1044,7 +1043,7 @@ const games = [
   players: "1 Player",
   badge: "Adventure",
   image: "https://static.playgama.com/p-img/pg/deadly-catch/big-preview/84725f50efc84ada9a3aa2550ca3e8db?width=448",
-  link: "https://playgama.com/export/game/deadly-catch",
+  link: "https://playgama.com/export/game/deadly-catch?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Catch rare fish, upgrade your equipment and explore new islands."
 },
@@ -1059,7 +1058,7 @@ const games = [
   players: "1 Player",
   badge: "Action",
   image: "https://static.playgama.com/p-img/pg/road-chase-shooter-realistic-guns/big-preview/6e87b1320c124a7f8ddd5034b7ea1d38?width=448",
-  link: "https://playgama.com/export/game/road-chase-shooter-realistic-guns",
+  link: "https://playgama.com/export/game/road-chase-shooter-realistic-guns?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Escape enemy vehicles using weapons, driving skills and quick reactions."
 },
@@ -1074,7 +1073,7 @@ const games = [
   players: "1 Player",
   badge: "3D",
   image: "https://static.playgama.com/p-img/pg/car-crash-sandbox/big_preview/27cc6ed862204c288a8e0460ac7d5e09?width=448",
-  link: "https://playgama.com/export/game/car-crash-sandbox",
+  link: "https://playgama.com/export/game/car-crash-sandbox?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Drive different vehicles and experience realistic crash physics."
 },
@@ -1089,7 +1088,7 @@ const games = [
   players: "1 Player",
   badge: "Racing",
   image: "https://static.playgama.com/p-img/pg/crazy-cart/big_preview/64e88864823e440787b3e13e6c9d1531?width=448",
-  link: "https://playgama.com/export/game/crazy-cart",
+  link: "https://playgama.com/export/game/crazy-cart?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Drive a shopping cart through challenging obstacle courses."
 },
@@ -1104,7 +1103,7 @@ const games = [
   players: "1 Player",
   badge: "Casual",
   image: "https://static.playgama.com/p-img/pg/ladder-master/big_preview/9c4e077a84204815ada2c1fcd861eba8?width=448",
-  link: "https://playgama.com/export/game/ladder-master",
+  link: "https://playgama.com/export/game/ladder-master?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Collect ladder pieces, dodge obstacles and climb towards the moon."
 },
@@ -1119,7 +1118,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/dinosaur-shifting-run/big-preview/68b95e1ddd2a40dfb80517d24197d18b?width=448",
-  link: "https://playgama.com/export/game/dinosaur-shifting-run",
+  link: "https://playgama.com/export/game/dinosaur-shifting-run?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Transform between human and dinosaur forms to overcome obstacles."
 },
@@ -1134,7 +1133,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/preview/83a5642f72fb4fb0a4f7faba84e549ff?width=448",
-  link: "https://playgama.com/export/game/vector-parkour-run",
+  link: "https://playgama.com/export/game/vector-parkour-run?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Escape across rooftops using jumps, slides and parkour moves."
 },
@@ -1149,7 +1148,7 @@ const games = [
   players: "1 Player",
   badge: "Popular",
   image: "https://static.playgama.com/p-img/pg/grow-slime/big-preview/e50446ce287e471f87e9867e296b8309?width=448",
-  link: "https://playgama.com/export/game/grow-slime",
+  link: "https://playgama.com/export/game/grow-slime?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Raise colourful slimes, collect rewards and expand your slime farm."
 },
@@ -1164,7 +1163,7 @@ const games = [
   players: "1 Player",
   badge: "Trending",
   image: "https://static.playgama.com/p-img/pg/merge-defense-army-behind-the-wall/big_preview/ba078bbffeaf437a912f0ff3d718f520?width=448",
-  link: "https://playgama.com/export/game/merge-defense-army-behind-the-wall",
+  link: "https://playgama.com/export/game/merge-defense-army-behind-the-wall?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Merge warriors, defend your wall and survive waves of monsters."
 },
@@ -1523,7 +1522,7 @@ const games = [
 
 
 ];
-const getGameUrl = (game) => game.link || game.gameUrl || "";
+
 
 
 const categories = [
@@ -1968,7 +1967,7 @@ onClick={() => setSelectedGame(game)}
       <iframe
         id="orqade-game-frame"
         key={selectedGame.id}
-        src={getGameUrl(selectedGame)}
+       src={selectedGame.gameUrl}
         title={selectedGame.title}
         allowFullScreen
         allow="fullscreen; autoplay; gamepad"
