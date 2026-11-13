@@ -46,7 +46,7 @@ const games = [
   rating: "Free",
   players: "1 Player",
   badge: "Sandbox",
-  image: "https://static.playgama.com/p-img/pg/buggy-simulator-sandbox-3d/big-preview/8c7f1f8909ac4e27a65d7a7529d14c01?width=448",
+image: "https://static.playgama.com/p-img/pg/backfill/game-111288/icon/543f48015b7f6c002a2a34136e6346e358457e4ffd762c7e7fd0752c7006ff7f?width=448",
   link: "https://playgama.com/export/game/buggy-simulator-sandbox-3d?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Explore an open driving sandbox with realistic buggy physics. Drive across different maps, test suspension, perform jumps and stunts, explore bridges, and experiment with vehicle handling."
@@ -61,7 +61,7 @@ const games = [
   rating: "Free",
   players: "Multiplayer",
   badge: "Battle Arena",
-  image: "https://static.playgama.com/p-img/pg/hot-rods-arena-stars/big-preview/74ef1328234d46e090c02ff3b247e1ca?width=448",
+image: "https://static.playgama.com/p-img/pg/backfill/game-109528/icon/1e384b37152695844407c62df0879e92d848fa51b5f67887c7eabbb72fbfce70?width=448",
   link: "https://playgama.com/export/game/hot-rods-arena-stars?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Enter explosive vehicle combat arenas with heavily armed hot rods. Collect stars, battle opponents, use weapons, upgrade armor, and compete to become the arena champion."
@@ -77,7 +77,7 @@ const games = [
   rating: "Free",
   players: "1 Player",
   badge: "Adventure",
-  image: "https://static.playgama.com/p-img/pg/obby-warriors-of-the-sword/big-preview/52c98f342b474a1387944450c02c9e7c?width=448",
+image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f38952353f833eb7df88abcf26f01c3f4b0af15278fd3459832b60c6fca88?width=448",
   link: "https://playgama.com/export/game/obby-warriors-of-the-sword?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Become a powerful warrior in this action RPG. Collect and upgrade swords, defeat enemies, unlock abilities, complete missions, collect pets and skins, and grow stronger through rebirth."
@@ -108,12 +108,9 @@ const games = [
   rating: "Free",
   players: "1 Player",
   badge: "Bike",
-  image: "https://static.playgama.com/p-img/pg/trial-xtreme/big-preview/985bb31f53d947d381d1035f772daa38?width=448",
-  gameUrl: "https://playgama.com/export/game/trial-xtreme?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
-  playgamaUrl: "https://playgama.com/game/trial-xtreme",
-  platform: ["Desktop", "Mobile"],
-  orientation: "landscape",
-  source: "Playgama",
+  image: "https://static.playgama.com/p-img/pg/backfill/game-119993/icon/2d1b0baa269ff4a150d68dff1500d37d2edf2649d765d89580e9988963cb9bca?width=448",
+  link:"https://playgama.com/export/game/trial-xtreme?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
   description: "Race a motorcycle across challenging obstacle courses filled with ramps, rocks, pipes, and barriers. Balance your bike, complete tracks, collect stars, and unlock new levels."
 },
 
@@ -127,12 +124,12 @@ const games = [
   rating: "Free",
   players: "1–2 Players",
   badge: "2 Player",
-  image: "https://static.playgama.com/p-img/pg/preview/d4824f297ede4856a6859ad16875d9eb?width=448",
-  gameUrl: "https://playgama.com/export/game/stick-fight-arena?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  image: "https://static.playgama.com/p-img/pg/icon/3eea089c98c441faabdaac351943cd69?width=448",
+  link:"https://playgama.com/export/game/stick-fight-arena?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   playgamaUrl: "https://playgama.com/game/stick-fight-arena",
   platform: ["Desktop", "Mobile"],
   orientation: "both",
-  source: "Playgama",
+  provider: "Playgama",
   description: "Battle with 18 unique stickman fighters using combos, special moves, grabs, and ragdoll knockouts. Play story mode, fight AI opponents, climb towers, try random Mod Fight challenges, or battle a friend in local 2-player and 2v2 tag matches."
 },
 
@@ -1504,11 +1501,7 @@ const games = [
   description: "Enter realistic tank battles in Tank 1944. Choose your tank, calculate your shots, develop battlefield tactics, and defeat enemy vehicles. Features realistic physics and detailed environments."
 },
 
-
-
 ];
-
-
 
 const categories = [
   { name: "All Games", icon: "" },
@@ -1545,7 +1538,12 @@ const [snakeOpen, setSnakeOpen] = useState(false);
 const [runnerOpen, setRunnerOpen] = useState(false);
 const [selectedGame, setSelectedGame] = useState(null);
 
+
 const [gameLoading, setGameLoading] = useState(true);
+
+function getGameUrl(game) {
+  return game?.gameURL || game?.gameUrl || game?.link || "";
+}
 
 useEffect(() => {
   if (!selectedGame) return;
@@ -1952,7 +1950,7 @@ onClick={() => setSelectedGame(game)}
       <iframe
         id="orqade-game-frame"
         key={selectedGame.id}
-       src={selectedGame.gameUrl}
+       src={getGameUrl(selectedGame)}
         title={selectedGame.title}
         allowFullScreen
         allow="fullscreen; autoplay; gamepad"

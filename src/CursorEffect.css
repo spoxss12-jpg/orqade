@@ -51,7 +51,7 @@
   border-color: rgba(0, 245, 160, 0.85);
   background: radial-gradient(
     circle,
-    rgba(0, 245, 160, 0.24),
+    rgba(0, 245, 160, 0.24),0
     rgba(91, 33, 182, 0.16) 55%,
     transparent 75%
   );
