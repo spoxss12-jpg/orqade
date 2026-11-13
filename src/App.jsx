@@ -984,7 +984,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   rating: "Free",
   players: "1 Player",
   badge: "Popular",
-  image:"https://static.playgama.com/p-img/pg/crazy-flying-car/icon/47bc9b63a40d4c6280ed8cae393362c1?width=448",
+  image:"https://static.playgama.com/p-img/pg/ragdoll-racing-extreme-downhill/icon/b62c32492a7b42299225c0273ca47299?width=448",
   link: "https://playgama.com/export/game/ragdoll-racing-extreme-downhill?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Race downhill against opponents and survive hilarious ragdoll crashes."
