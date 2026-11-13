@@ -129,7 +129,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   players: "1 Player",
   badge: "Bike",
   image: "https://static.playgama.com/p-img/pg/backfill/game-119993/icon/2d1b0baa269ff4a150d68dff1500d37d2edf2649d765d89580e9988963cb9bca?width=448",
-  link:"https://playgama.com/export/game/trial-xtreme?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  link: "https://playgama.com/export/game/trial-xtreme?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Race a motorcycle across challenging obstacle courses filled with ramps, rocks, pipes, and barriers. Balance your bike, complete tracks, collect stars, and unlock new levels."
 },
@@ -164,7 +164,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   rating: "Free",
   players: "1–2 Players",
   badge: "2 Player",
-  image: "https://static.playgama.com/p-img/pg/eat-blobs-simulator/big_preview/67cf17bd4834498799d6eba8a5c660c3?width=448",
+  image: "https://static.playgama.com/p-img/pg/eat-blobs-simulator/icon/f9aaebef277b4aa7bf66874640bf2190?width=448",
   link: "https://playgama.com/export/game/eat-blobs-simulator?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Grow your blob by collecting colorful slime pieces and eating smaller opponents. Avoid larger blobs, unlock skins, and compete solo or with a friend in local 2-player mode."
@@ -181,12 +181,9 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   rating: "Free",
   players: "1 Player",
   badge: "3D",
-  image: "https://static.playgama.com/p-img/pg/cliff-crash/big_preview/32dc6bf076bf408989ad98a6242c81cb?width=448",
-  gameUrl: "https://playgama.com/export/game/cliff-crash?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
-  playgamaUrl: "https://playgama.com/game/cliff-crash",
-  platform: ["Desktop", "Mobile"],
-  orientation: "both",
-  source: "Playgama",
+  image: "https://static.playgama.com/p-img/pg/cliff-crash/icon/33215b104c6045a49e32ad83689566d0?width=448",
+  link:"https://playgama.com/export/game/cliff-crash?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
   description: "Drive downhill, launch your car off cliffs, and create spectacular explosions and destruction. Control your vehicle in midair, use nitro boosts, and trigger explosive crashes to maximize destruction before reaching the finish line."
 },
   {
@@ -215,7 +212,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
     rating: "Free",
     players: "PC / Mobile",
     badge: "MULTIPLAYER",
-    image: "https://static.playgama.com/p-img/pg/traffic-rush-online/icon/f83b2c9d897d444e8f3b47b2a2a01fa7?width=448",
+    image:"https://static.playgama.com/p-img/pg/traffic-rush-online/icon/f83b2c9d897d444e8f3b47b2a2a01fa7?width=448",
     link: "https://playgama.com/export/game/traffic-rush-online?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
     provider: "Playgama",
     description: "Drive through busy city traffic, upgrade cars and compete with other players."
@@ -263,7 +260,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
     rating: "Free",
     players: "All Devices",
     badge: "STRATEGY",
-    image: "https://static.playgama.com/p-img/pg/aod--art-of-defense/icon/01ed7544e47a43fc9daffd45b0d23c26?width=448",
+    image: "https://static.playgama.com/p-img/pg/aod--art-of-defense/icon/01ed7544e47a43fc9daffd45b0d23c26?width=448 ",
     link: "https://playgama.com/export/game/aod--art-of-defense?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
     provider: "Playgama",
     description: "Build defensive towers, command heroes and protect humanity in a post-apocalyptic world."
@@ -279,7 +276,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   players: "All Devices",
   badge: "RACING",
   image: "https://static.playgama.com/p-img/pg/backfill/game-90490/icon/1e73c6b9b06c3586f6c0199519bfdbf7c8a5b8c2da8fbb4a225a9d4d287f6cc2?width=448",
-  link: "https://playgama.com/export/game/mr-racer-car-racing?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  link: "https://mrracer.online/export?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Race supercars, dodge traffic, complete missions and customize your dream cars."
 },
@@ -362,7 +359,6 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
     players: "All Devices",
     badge: "PUZZLE",
     image: "https://static.playgama.com/p-img/pg/backfill/game-20/icon/b4e02cf5b16be4ba8aa2f90ce3728fd1be867958bd81bffa2ffc98f5c7339f1e?width=448",
-
     link: "https://playgama.com/export/game/popping-candies?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
     provider: "Playgama",
     description: "Match colorful candies, create powerful combinations and complete challenging puzzle levels."
@@ -394,7 +390,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
     players: "All Devices",
     badge: "Popular",
     image: "https://static.playgama.com/p-img/pg/icon/9971d91837ff49f7b8eebbee84d0755d?width=448",
-    link: "https://playgama.com/export/game/build-a-rollercoaster-simulator?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+    link: "https://playgama.com/export/game/build-a-rollercoaster-simulator?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5 ",
     provider: "Playgama",
     description: "Build your own rollercoaster, unlock new tracks, ride your creations, and earn money to expand your amusement park."
   },
@@ -410,7 +406,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   players: "All Devices",
   badge: "RACING",
   image: "https://static.playgama.com/p-img/pg/backfill/game-90490/icon/1e73c6b9b06c3586f6c0199519bfdbf7c8a5b8c2da8fbb4a225a9d4d287f6cc2?width=448",
-  link: "https://playgama.com/export/game/mr-racer-car-racing?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  link: "https://mrracer.online/export?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Race supercars, dodge traffic, complete missions and customize your dream cars."
 },
@@ -472,7 +468,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   rating: "Free",
   players: "1 Player",
   badge: "3D",
-  image: "https://static.playgama.com/p-img/pg/needle-quest-haystack-secrets/icon/c18d60dee8d64761933f1407a1709f27?width=448",
+  image: "https://static.playgama.com/p-img/pg/icon/069b1ebe27a84c4ead22008e3961a9e4?width=448",
   link: "https://playgama.com/export/game/needle-quest-haystack-secrets?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Search through huge 3D haystacks to find a hidden needle. Collect straw, discover treasures, and upgrade your tools and storage."
