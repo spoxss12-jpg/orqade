@@ -4,6 +4,9 @@ import NeonSnake from "./NeonSnake";
 import JungleRunner from "./JungleRunner";
 import { useMemo, useState, useEffect } from "react";
 const games = [
+
+
+  
 {
   id: "stickman-street-fighting",
   title: "Stickman Street Fighting",
@@ -1767,10 +1770,12 @@ onClick={() => setSelectedGame(game)}
                   <span className="cover-art">
   {game.image ? (
     <img
-      src={game.image}
-      alt={game.title}
-      className="game-cover-image"
-    />
+  src={game.image}
+  alt={game.title}
+  className="game-cover-image"
+  loading="lazy"
+  decoding="async"
+/>
   ) : (
     game.icon
   )}
