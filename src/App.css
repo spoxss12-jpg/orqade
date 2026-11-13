@@ -1017,3 +1017,301 @@ button { cursor: pointer; }
     transform: rotate(360deg);
   }
 }
+/* Stickman Street Fighting thumbnail only */
+.stickman-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+
+  .game-cover {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
+
+
+
+/* =================================
+   ORQADE MOBILE RESPONSIVE FIX
+================================= */
+
+@media (max-width: 600px) {
+
+  html,
+  body,
+  #root,
+  .site-shell {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .topbar {
+    height: 64px;
+  }
+
+  .topbar-inner {
+    padding: 0 16px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .main-nav {
+    gap: 12px;
+  }
+
+  .topbar-actions {
+    gap: 8px;
+  }
+
+  .live-indicator {
+    display: none;
+  }
+
+  .topbar-button {
+    padding: 9px 10px;
+    font-size: 9px;
+  }
+
+  /* HERO */
+  .hero-container {
+    min-height: auto;
+    padding: 55px 20px 35px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(48px, 13vw, 68px);
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero-stats {
+    gap: 25px;
+    margin-top: 35px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 330px;
+    height: 280px;
+    align-self: center;
+    transform: scale(.85);
+  }
+
+  .visual-ring {
+    width: 230px;
+    height: 230px;
+  }
+
+  .ring-two {
+    width: 270px;
+    height: 270px;
+  }
+
+  .visual-orb {
+    width: 160px;
+    height: 160px;
+    font-size: 80px;
+  }
+
+  .hero-marquee {
+    padding: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 7px;
+  }
+
+  /* GAME LIBRARY */
+  .library-section {
+    padding: 55px 16px;
+  }
+
+  .section-topline {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-topline h2 {
+    font-size: 27px;
+  }
+
+  .library-count strong {
+    font-size: 23px;
+  }
+
+  .library-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin: 25px 0;
+  }
+
+  .category-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-tab {
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* ONE GAME PER ROW */
+  .games-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .game-cover {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .game-card-details {
+    padding-top: 10px;
+  }
+
+  .game-title-row h3 {
+    font-size: 14px;
+  }
+
+  .game-genre {
+    font-size: 10px;
+  }
+
+  .game-card-meta {
+    font-size: 9px;
+  }
+
+  /* DISCOVER */
+  .discover-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 50px 20px;
+  }
+
+  .discover-content h2 {
+    font-size: 36px;
+  }
+
+  .discover-panels {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .discover-panel {
+    min-height: 160px;
+    padding: 13px;
+  }
+
+  .panel-icon {
+    font-size: 40px;
+    top: 18px;
+    right: 13px;
+  }
+
+  /* NEWSLETTER */
+  .newsletter-section {
+    padding: 45px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter-section h2 {
+    font-size: 26px;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding: 40px 20px 0;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    padding: 18px 0;
+    flex-wrap: wrap;
+    line-height: 1.7;
+  }
+
+  /* GAME PLAYER */
+  .game-player {
+    padding: 5px;
+  }
+
+  .game-player-header {
+    padding: 8px;
+  }
+
+  .game-player-content {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .game-frame {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .game-frame iframe {
+    height: 100%;
+    min-height: 0;
+  }
+
+  /* STOP HOVER ZOOM ON TOUCH */
+  .game-card:hover,
+  .game-cover:hover {
+    transform: none;
+  }
+
+  .game-card:hover .game-cover-image {
+    transform: none;
+  }
+}
