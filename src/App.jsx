@@ -5,9 +5,7 @@ import JungleRunner from "./JungleRunner";
 import { useMemo, useState, useEffect } from "react";
 const games = [
 
-
-  
-{
+  {
   id: "stickman-street-fighting",
   title: "Stickman Street Fighting",
   genre: "Action",
@@ -26,6 +24,7 @@ const games = [
   
   {
   id: 1,
+  playgamaId: "116706",
   title: "Snake Slither.io Italian Brainrot",
   genre: "Snake",
   category: "Arcade",
@@ -34,14 +33,15 @@ const games = [
   rating: "Free",
   players: "1 Player",
   badge: "Meme",
-  link:"https://playgama.com/export/game/snake-slitherio-italian-brainrot?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
-  image:"https://static.playgama.com/p-img/pg/backfill/game-116706/icon/cf1fc230fcfad36163797b69beece4008208ac530d4d7dccd6f9600b24e5a4e4?width=448",
+  link: "https://playgama.com/export/game/snake-slitherio-italian-brainrot?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  image: "https://static.playgama.com/p-img/pg/backfill/game-116706/icon/cf1fc230fcfad36163797b69beece4008208ac530d4d7dccd6f9600b24e5a4e4?width=448",
+  imagePreview: "https://static.playgama.com/p-img/pg/snake-slitherio-italian-brainrot/big-preview/40355472baf945cb88dbac392fc9404f?width=448",
   provider: "Playgama",
   description: "Grow your snake, collect orbs, and dodge other snakes in a chaotic Italian brainrot meme arena. Mouse controls."
-  },
+},
 {
   id: 2,
-  title: "Deadly Descent",
+  title: "Deadly Descnet",
   genre: "Racing",
   category: "Racing",
   icon: "🚗",
@@ -58,6 +58,7 @@ const games = [
 
 {
   id: 3,
+  playgamaId: "111288",
   title: "Buggy Simulator Sandbox 3D",
   genre: "Driving",
   category: "Simulation",
@@ -67,12 +68,14 @@ const games = [
   players: "1 Player",
   badge: "Sandbox",
   image: "https://static.playgama.com/p-img/pg/backfill/game-111288/icon/543f48015b7f6c002a2a34136e6346e358457e4ffd762c7e7fd0752c7006ff7f?width=448",
+  imagePreview: "https://static.playgama.com/p-img/pg/buggy-simulator-sandbox-3d/big-preview/8c7f1f8909ac4e27a65d7a7529d14c01?width=448",
   link: "https://playgama.com/export/game/buggy-simulator-sandbox-3d?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Explore an open driving sandbox with realistic buggy physics. Drive across different maps, test suspension, perform jumps and stunts, explore bridges, and experiment with vehicle handling."
 },
 {
   id: 4,
+  playgamaId: "109528",
   title: "Hot Rods Arena Stars",
   genre: "Combat Racing",
   category: "Action",
@@ -81,7 +84,8 @@ const games = [
   rating: "Free",
   players: "Multiplayer",
   badge: "Battle Arena",
-image: "https://static.playgama.com/p-img/pg/backfill/game-109528/icon/1e384b37152695844407c62df0879e92d848fa51b5f67887c7eabbb72fbfce70?width=448",
+  image: "https://static.playgama.com/p-img/pg/backfill/game-109528/icon/1e384b37152695844407c62df0879e92d848fa51b5f67887c7eabbb72fbfce70?width=448",
+  imagePreview: "https://static.playgama.com/p-img/pg/hot-rods-arena-stars/big-preview/74ef1328234d46e090c02ff3b247e1ca?width=448",
   link: "https://playgama.com/export/game/hot-rods-arena-stars?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Enter explosive vehicle combat arenas with heavily armed hot rods. Collect stars, battle opponents, use weapons, upgrade armor, and compete to become the arena champion."
@@ -89,6 +93,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-109528/icon/1e384b371
 
 {
   id: 5,
+  playgamaId: "99145",
   title: "Obby: Warriors of The Sword",
   genre: "RPG",
   category: "Action",
@@ -97,7 +102,8 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-109528/icon/1e384b371
   rating: "Free",
   players: "1 Player",
   badge: "Adventure",
-image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f38952353f833eb7df88abcf26f01c3f4b0af15278fd3459832b60c6fca88?width=448",
+  image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f38952353f833eb7df88abcf26f01c3f4b0af15278fd3459832b60c6fca88?width=448",
+  imagePreview: "https://static.playgama.com/p-img/pg/obby-warriors-of-the-sword/big-preview/52c98f342b474a1387944450c02c9e7c?width=448",
   link: "https://playgama.com/export/game/obby-warriors-of-the-sword?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Become a powerful warrior in this action RPG. Collect and upgrade swords, defeat enemies, unlock abilities, complete missions, collect pets and skins, and grow stronger through rebirth."
@@ -491,6 +497,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
 },
 {
   id: 29,
+  playgamaId: "114337",
   title: "Sprunki World Online RP",
   genre: "Multiplayer",
   category: "3D Open World",
@@ -500,6 +507,7 @@ image: "https://static.playgama.com/p-img/pg/backfill/game-99145/icon/5a0f389523
   players: "Android, iOS, Desktop",
   badge: "MULTIPLAYER",
   image: "https://static.playgama.com/p-img/pg/icon/b057a2a237814b979180e85c0b975492?width=448",
+  imagePreview: "https://static.playgama.com/p-img/pg/preview/542149fc69824db4a3ade368771deced?width=448",
   link: "https://playgama.com/export/game/sprunki-world-online-rp--play-with-friends?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Explore a colorful 3D world, play obby challenges, build with blocks, discover hidden Sprunki and enjoy multiplayer adventures with friends."
@@ -1557,16 +1565,44 @@ const [selectedGame, setSelectedGame] = useState(null);
 
 const [gameLoading, setGameLoading] = useState(true);
 
+
+const PLAYGAMA_CLID = "p_d5690e8c-531c-4c8a-87e6-34f11440e1e5";
+
 function getGameUrl(game) {
-  return game?.gameURL || game?.gameUrl || game?.link || "";
+  const rawUrl =
+    game?.gameURL ||
+    game?.gameUrl ||
+    game?.link ||
+    "";
+
+  if (!rawUrl) return "";
+
+  try {
+    const url = new URL(rawUrl);
+
+    // Only adjust official Playgama export game URLs
+    if (
+      url.hostname === "playgama.com" &&
+      url.pathname.startsWith("/export/game/")
+    ) {
+      if (!url.searchParams.has("clid")) {
+        url.searchParams.set("clid", PLAYGAMA_CLID);
+      }
+    }
+
+    return url.toString();
+  } catch {
+    console.warn("Invalid game URL:", rawUrl);
+    return "";
+  }
 }
+
 
 useEffect(() => {
   if (!selectedGame) return;
 
   setGameLoading(true);
 }, [selectedGame]);
-
 
 const filteredGames = useMemo(() => {
   return games.filter((game) => {
