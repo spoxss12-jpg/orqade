@@ -5,6 +5,187 @@ import JungleRunner from "./JungleRunner";
 import { useMemo, useState, useEffect } from "react";
 const games = [
 
+{
+  id: 100,
+  title: "Bomber Friends",
+  genre: "Action",
+  category: "Bomber Multiplayer",
+  icon: "💣",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "MULTIPLAYER",
+  image: "https://img.gamepix.com/games/bomber-friends/icon/bomber-friends.png?w=512",
+  link: "https://play.gamepix.com/bomber-friends/embed?sid=1",
+  provider: "GamePix",
+  description: "Drop bombs, dodge explosions, and battle opponents in explosive multiplayer arenas."
+},
+{
+  id: 98,
+  title: "Worms Zone",
+  genre: "Arcade",
+  category: "Snake .io",
+  icon: "🐛",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "ARCADE",
+  image: "https://img.gamepix.com/games/worms-zone/icon/worms-zone.png?w=512",
+  link: "https://play.gamepix.com/worms-zone/embed?sid=1",
+  provider: "GamePix",
+  description: "Eat food, grow your worm, avoid rivals, and become the biggest worm in the arena."
+},
+
+{
+  id: 98,
+  title: "My Sugar Factory",
+  genre: "Simulation",
+  category: "Idle Tycoon",
+  icon: "🍬",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "TYCOON",
+  image: "https://img.gamepix.com/games/my-sugar-factory/icon/my-sugar-factory.png?w=512",
+  link: "https://play.gamepix.com/my-sugar-factory/embed?sid=1",
+  provider: "GamePix",
+  description: "Build a sweet production empire, manage your factory, and grow your sugar business."
+},
+
+  
+{
+  id: 97,
+  title: "1941 Frozen Front",
+  genre: "Strategy",
+  category: "WWII Strategy",
+  icon: "🎖️",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "STRATEGY",
+  image: "https://img.gamepix.com/games/1941-frozen-front/icon/1941-frozen-front.png?w=512",
+  link: "https://play.gamepix.com/1941-frozen-front/embed?sid=1",
+  provider: "GamePix",
+  description: "Command military units, plan battlefield tactics, and fight strategic World War II battles."
+},
+{
+  id: 96,
+  title: "Demolition Derby Life",
+  genre: "Racing",
+  category: "Demolition Racing",
+  icon: "🏎️",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "RACING",
+  image: "https://img.gamepix.com/games/demolition-derby-life/icon/demolition-derby-life.png?w=512",
+  link: "https://play.gamepix.com/demolition-derby-life/embed?sid=1",
+  provider: "GamePix",
+  description: "Crash into rival cars, survive chaotic demolition derbies, and become the last driver standing."
+},
+{
+  id: 95,
+  title: "Car Crash Test",
+  genre: "Simulation",
+  category: "Car Simulator",
+  icon: "🚗",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "SIMULATION",
+  image: "https://img.gamepix.com/games/car-crash-test/icon/car-crash-test.png?w=512",
+  link: "https://play.gamepix.com/car-crash-test/embed?sid=1",
+  provider: "GamePix",
+  description: "Test vehicle durability, create dramatic crashes, and explore realistic car damage."
+},
+
+  
+
+{
+  id: 93,
+  title: "Slope Racing 3D",
+  genre: "Racing",
+  category: "3D Racing",
+  icon: "🏎️",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "RACING",
+  image: "https://img.gamepix.com/games/slope-racing-3d/cover/slope-racing-3d.png?w=512",
+  link: "https://play.gamepix.com/slope-racing-3d/embed?sid=1",
+  provider: "GamePix",
+  description: "Race down thrilling 3D slopes, dodge obstacles, and test your speed and control."
+},
+
+{
+  id: 92,
+  title: "Turbo Dismounting",
+  genre: "Simulation",
+  category: "Physics",
+  icon: "💥",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "SIMULATION",
+  image: "https://img.gamepix.com/games/turbo-dismounting/icon/turbo-dismounting.png?w=512",
+  link: "https://play.gamepix.com/turbo-dismounting/embed?sid=1",
+  provider: "GamePix",
+  description: "Create spectacular ragdoll crashes, test different stunts, and rack up points."
+},
+{
+  id: 91,
+  title: "TenTrix",
+  genre: "Puzzle",
+  category: "Block Puzzle",
+  icon: "🧩",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "PUZZLE",
+  image: "https://img.gamepix.com/games/tentrix/icon/tentrix.png?w=512",
+  link: "https://play.gamepix.com/tentrix/embed?sid=1",
+  provider: "GamePix",
+  description: "Place colorful blocks on the board, complete lines, and beat your high score."
+},
+
+
+
+
+
+ {
+  id: 90,
+  title: "Body Drop 3D",
+  genre: "Casual",
+  category: "Physics",
+  icon: "🧍",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "CASUAL",
+  image: "https://img.gamepix.com/games/body-drop-3d/icon/body-drop-3d.png?w=512",
+  link: "https://play.gamepix.com/body-drop-3d/embed?sid=1",
+  provider: "GamePix",
+  description: "Play Body Drop 3D directly in your browser."
+}, 
+
+{
+  id: 1,
+  title: "Steal An Egg - Grow Animals",
+  genre: "Adventure",
+  category: "Simulation",
+  icon: "🥚",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "NEW",
+  image: "https://static.playgama.com/p-img/pg/steal-an-egg-grow-animals/icon/3e94ce5ae63e4ea7bdd53c0e0109f9ce?width=448",
+  link: "https://playgama.com/export/game/steal-an-egg-grow-animals?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
+  description: "Steal eggs from guards, hatch rare pets, upgrade your speed, and explore exciting new locations.",
+},
+
+
+
   {
   id: "stickman-street-fighting",
   title: "Stickman Street Fighting",
@@ -508,7 +689,7 @@ const games = [
   badge: "MULTIPLAYER",
   image: "https://static.playgama.com/p-img/pg/icon/b057a2a237814b979180e85c0b975492?width=448",
   imagePreview: "https://static.playgama.com/p-img/pg/preview/542149fc69824db4a3ade368771deced?width=448",
-  link: "https://playgama.com/export/game/sprunki-world-online-rp--play-with-friends?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  link:"https://playgama.com/export/game/sprunki-world-online-rp--play-with-friends?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
   provider: "Playgama",
   description: "Explore a colorful 3D world, play obby challenges, build with blocks, discover hidden Sprunki and enjoy multiplayer adventures with friends."
 },
@@ -1597,12 +1778,33 @@ function getGameUrl(game) {
   }
 }
 
-
 useEffect(() => {
   if (!selectedGame) return;
 
   setGameLoading(true);
+
+  const url = getGameUrl(selectedGame);
+
+  console.log("========== ORQADE GAME TEST ==========");
+  console.log("Game:", selectedGame.title);
+  console.log("Provider:", selectedGame.provider || selectedGame.source);
+  console.log("Playgama ID:", selectedGame.playgamaId || "Not provided");
+  console.log("Final iframe URL:", url);
+
+  if (url) {
+    const parsedUrl = new URL(url);
+
+    console.log(
+      "CLID:",
+      parsedUrl.searchParams.get("clid") || "MISSING"
+    );
+  }
+
+  console.log("======================================");
 }, [selectedGame]);
+
+
+
 
 const filteredGames = useMemo(() => {
   return games.filter((game) => {
@@ -2001,15 +2203,25 @@ onClick={() => setSelectedGame(game)}
         </div>
       )}
 
-      <iframe
-        id="orqade-game-frame"
-        key={selectedGame.id}
-       src={getGameUrl(selectedGame)}
-        title={selectedGame.title}
-        allowFullScreen
-        allow="fullscreen; autoplay; gamepad"
-        onLoad={() => setGameLoading(false)}
-      />
+     
+<iframe
+  id="orqade-game-frame"
+  key={String(selectedGame.id)}
+  src={getGameUrl(selectedGame)}
+  title={selectedGame.title}
+  allowFullScreen
+  allow="fullscreen; autoplay; gamepad"
+  onLoad={() => {
+    setGameLoading(false);
+    console.log("ORQADE: iframe loaded:", selectedGame.title);
+  }}
+  onError={() => {
+    setGameLoading(false);
+    console.error("ORQADE: iframe failed:", selectedGame.title);
+  }}
+/>
+
+
 
     </div>
 
