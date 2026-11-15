@@ -5,6 +5,100 @@ import JungleRunner from "./JungleRunner";
 import { useMemo, useState, useEffect } from "react";
 const games = [
 
+
+{
+  id: 103,
+  title: "PVZ Fusion Cheats",
+  genre: "Strategy",
+  category: "Tower Defense",
+  icon: "🌻",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "TRENDING",
+  image: "https://static.playgama.com/p-img/pg/plants-vs-zombies-fusion-edition/big_preview/0a3f694494fd4b469429f9c8baf0cb93?width=448",
+  link: "https://playgama.com/export/game/plants-vs-zombies-fusion-edition?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
+  description: "Defend your garden against zombie hordes! Combine plants to create powerful hybrids, unlock new abilities, complete challenges and build the ultimate zombie defense.",
+  devices: ["Android", "Desktop"],
+  mobileReady: true,
+  orientation: "landscape",
+  playgamaId: "120415",
+  slug: "plants-vs-zombies-fusion-edition",
+  playgamaGameUrl: "https://playgama.com/game/plants-vs-zombies-fusion-edition",
+  tags: [
+    "plants-vs-zombies",
+    "zombie",
+    "strategy",
+    "tower-defense",
+    "hybrid-plants",
+    "survival",
+    "defense",
+    "single-player"
+  ]
+},
+{
+  id: 102,
+  title: "Crime and Vice City Police",
+  genre: "Racing",
+  category: "Driving",
+  icon: "🚔",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "MULTIPLAYER",
+  image: "https://static.playgama.com/p-img/pg/crime-and-vice-city-police/big-preview/7ae0b72e2627499798611c4d25e6d9fe?width=448",
+  link: "https://playgama.com/export/game/crime-and-vice-city-police?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
+  description: "Explore a massive city, drive different vehicles, escape the police, compete in online multiplayer and experience realistic car destruction and crashes.",
+  devices: ["Android", "iOS", "Desktop"],
+  mobileReady: true,
+  orientation: "landscape",
+  playgamaId: "117412",
+  slug: "crime-and-vice-city-police",
+  tags: [
+    "driving",
+    "cars",
+    "multiplayer",
+    "police",
+    "simulation",
+    "3d",
+    "car-crash",
+    "destruction",
+    "open-world"
+  ]
+},
+
+{
+  id: 101,
+  title: "RIVALS FPS: Online Shooter",
+  genre: "Action",
+  category: "Shooter",
+  icon: "🔫",
+  color: "turbo",
+  rating: "Free",
+  players: "All Devices",
+  badge: "MULTIPLAYER",
+  image: "https://static.playgama.com/p-img/pg/rivals-fps-online-shooter/big_preview/f09adf25db724a509d28d6427dfd4d7c?width=448",
+  link: "https://playgama.com/export/game/rivals-fps-online-shooter?clid=p_d5690e8c-531c-4c8a-87e6-34f11440e1e5",
+  provider: "Playgama",
+  description: "Enter intense 3D multiplayer FPS battles. Create or join arenas, fight opponents, unlock weapons and compete with friends. Supports mobile and desktop.",
+  devices: ["Android", "iOS", "Desktop"],
+  mobileReady: true,
+  orientation: "landscape",
+  playgamaId: "119203",
+  slug: "rivals-fps-online-shooter",
+  tags: [
+    "multiplayer",
+    "fps",
+    "shooter",
+    "pvp",
+    "3d",
+    "action",
+    "arena"
+  ]
+},
+
 {
   id: 100,
   title: "Bomber Friends",
@@ -37,7 +131,7 @@ const games = [
 },
 
 {
-  id: 98,
+  id: 97,
   title: "My Sugar Factory",
   genre: "Simulation",
   category: "Idle Tycoon",
@@ -54,7 +148,7 @@ const games = [
 
   
 {
-  id: 97,
+  id: 96,
   title: "1941 Frozen Front",
   genre: "Strategy",
   category: "WWII Strategy",
@@ -1806,25 +1900,42 @@ useEffect(() => {
 
 
 
+
 const filteredGames = useMemo(() => {
   return games.filter((game) => {
+    const selected = category.toLowerCase().trim();
+
+    const gameCategories = [
+      game.genre,
+      game.category,
+      ...(Array.isArray(game.tags) ? game.tags : []),
+    ]
+      .filter(Boolean)
+      .map(value => String(value).toLowerCase().trim());
+
     const matchesCategory =
-      category === "All Games" ||
-      [game.genre, game.category, ...(game.tags || [])]
-        .some(value =>
-          String(value || "").toLowerCase().trim() ===
-          category.toLowerCase().trim()
-        );
+      selected === "all games" ||
+      gameCategories.includes(selected);
+
+    const query = search.toLowerCase().trim();
 
     const matchesSearch =
-      !search ||
-      game.title.toLowerCase().includes(search.toLowerCase()) ||
-      game.genre?.toLowerCase().includes(search.toLowerCase()) ||
-      game.category?.toLowerCase().includes(search.toLowerCase());
+      !query ||
+      game.title?.toLowerCase().includes(query) ||
+      gameCategories.some(value => value.includes(query));
 
     return matchesCategory && matchesSearch;
   });
 }, [games, category, search]);
+
+console.table(
+  games.slice(0, 20).map(game => ({
+    title: game.title,
+    genre: game.genre,
+    category: game.category,
+    selectedCategory: category
+  }))
+);
 
 
 

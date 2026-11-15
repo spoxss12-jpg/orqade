@@ -345,6 +345,11 @@ button { cursor: pointer; }
   border-radius: 3px;
   padding: 4px;
 }
+
+/* =========================================
+   ORQADE GAME GRID & THUMBNAILS
+   ========================================= */
+
 .games-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -354,18 +359,10 @@ button { cursor: pointer; }
 
 .game-card {
   min-width: 0;
-}
-/* RESPONSIVE GAME THUMBNAILS */
-.game-cover-image {
-  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: inherit;
 }
 
-/* GAME COVER */
+/* Game cover */
 .game-cover {
   width: 100%;
   height: 168px;
@@ -379,28 +376,63 @@ button { cursor: pointer; }
   transition: transform .25s, border-color .25s, box-shadow .25s;
 }
 
-/* FULL IMAGE COVER */
+/* Game thumbnail */
 .game-cover-image {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block;
   border-radius: inherit;
   z-index: 0;
 }
 
-/* Preserve rounded corners on all devices */
-.game-cover,
-.game-cover-image {
-  border-radius: 9px;
+/* Tablet */
+@media (max-width: 1100px) {
+  .games-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px 14px;
+  }
 }
 
-.game-cover {
-  overflow: hidden;
+/* Small tablet */
+@media (max-width: 768px) {
+  .games-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 12px;
+  }
+
+  .game-cover {
+    height: 145px;
+  }
 }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 11px;
+  }
+
+  .game-cover {
+    height: auto;
+    aspect-ratio: 16 / 11;
+  }
+
+  .game-cover-image {
+    object-fit: cover;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .games-grid {
+    gap: 10px 8px;
+  }
+}
+
 .cover-neon { background: radial-gradient(circle at 50% 45%,#8b376c,#27172e 75%); }
 .cover-shadow { background: radial-gradient(circle at 50% 45%,#6942a8,#1c172d 75%); }
 .cover-cyber { background: radial-gradient(circle at 50% 45%,#176c83,#131e35 75%); }
@@ -1539,5 +1571,185 @@ button { cursor: pointer; }
   .game-cover,
   .game-cover-image {
     transition: none !important;
+  }
+}
+
+/* =========================================
+   ORQADE - RESPONSIVE HEADER FIX
+   ========================================= */
+
+/* Desktop header */
+.topbar {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.topbar-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.brand {
+  flex-shrink: 0;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.nav-link {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Hide mobile toggle on desktop */
+.mobile-menu-button {
+  display: none;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .topbar-inner {
+    padding-left: 4%;
+    padding-right: 4%;
+    gap: 14px;
+  }
+
+  .main-nav {
+    gap: 12px;
+  }
+
+  .topbar-actions {
+    gap: 8px;
+  }
+
+  .topbar-button {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile navigation */
+@media (max-width: 700px) {
+  .topbar {
+    height: 68px;
+  }
+
+  .topbar-inner {
+    padding: 0 18px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .mobile-menu-button {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: 1px solid #ffffff20;
+    border-radius: 10px;
+    background: #ffffff08;
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    z-index: 102;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 14px 18px 18px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 5px;
+    background: #090910;
+    border-bottom: 1px solid #ffffff20;
+    box-shadow: 0 18px 30px #00000070;
+    z-index: 101;
+  }
+
+  .main-nav.nav-open {
+    display: flex;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 9px;
+    font-size: 14px;
+  }
+
+  .nav-link:hover,
+  .nav-link.selected {
+    background: #ffffff0c;
+  }
+
+  .topbar-actions {
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  .live-indicator {
+    display: none !important;
+  }
+
+  .topbar-button {
+    padding: 9px 11px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+  .topbar-inner {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .brand-symbol {
+    width: 27px;
+    height: 27px;
+    margin-right: 6px;
+  }
+
+  .topbar-button {
+    padding: 8px;
+    font-size: 9px;
+  }
+
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
   }
 }
