@@ -1759,7 +1759,7 @@ button { cursor: pointer; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  loading: lazy;
+  
 }
 .cover-art {
   position: absolute;

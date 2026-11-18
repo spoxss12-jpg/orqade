@@ -153212,7 +153212,7 @@ onClick={() => setSelectedGame(game)}
     src={getGameImage(game)}
     alt={game.title || "Game artwork"}
     className="game-cover-image"
-    loading={index < 8 ? "eager" : "lazy"}
+    loading={index < 4 ? "eager" : "lazy"}
     decoding="async"
    fetchPriority={index < 4 ? "high" : "auto"}
     onError={(e) => {
