@@ -153000,8 +153000,12 @@ const filteredGames = useMemo(() => {
       .map(value => String(value).toLowerCase().trim());
 
     const matchesCategory =
-      selected === "all games" ||
-      gameCategories.includes(selected);
+  selected === "all games" ||
+  gameCategories.some(value =>
+    value === selected ||
+    value.includes(selected) ||
+    selected.includes(value)
+  );
 
     const query = search.toLowerCase().trim();
 
@@ -153210,7 +153214,7 @@ onClick={() => setSelectedGame(game)}
     className="game-cover-image"
     loading={index < 8 ? "eager" : "lazy"}
     decoding="async"
-    fetchPriority={index < 4 ? "high" : "low"}
+   fetchPriority={index < 4 ? "high" : "auto"}
     onError={(e) => {
       e.currentTarget.style.display = "none";
     }}
