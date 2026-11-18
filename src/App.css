@@ -1753,3 +1753,60 @@ button { cursor: pointer; }
     height: 38px;
   }
 }
+.game-cover-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  loading: lazy;
+}
+.cover-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.cover-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+}
+
+.game-cover-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.cover-number,
+.game-badge,
+.cover-play,
+.cover-shine {
+  position: relative;
+  z-index: 2;
+}
+/* ORQADE scrolling optimization */
+.game-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 320px;
+}
+
+/* Reduce image rendering overhead */
+.game-cover-image {
+  display: block;
+  max-width: 100%;
+}
+
+/* Avoid expensive hover effects during scrolling */
+.game-card {
+  backface-visibility: hidden;
+}
